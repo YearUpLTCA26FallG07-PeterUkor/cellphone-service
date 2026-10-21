@@ -6,38 +6,46 @@ public class CellPhoneApplication {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        CellPhone firstCellPhone = new CellPhone();
+        CellPhone cellPhone1 = new CellPhone();
+        CellPhone cellPhone2 = new CellPhone();
+        CellPhone cellPhone3 = new CellPhone(123456, "Samsung", "AT&T", "123-456-7890", "Peter");
+
+        // prompt and accept input
+        configCellPhone(cellPhone1, input);
+        // create a new cell phone
+        configCellPhone(cellPhone2, input);
+
+        cellPhone1.displayCellPhoneInfo();
+        cellPhone2.displayCellPhoneInfo();
+
+        // dial phone numbers
+        cellPhone1.dial(cellPhone2.getPhoneNumber());
+        cellPhone2.dial(cellPhone1.getPhoneNumber());
+    }
+
+    public static void configCellPhone(CellPhone cellPhone, Scanner input) {
 
         // prompt and accept input
         System.out.print("What is the serial number? ");
         int serialNumber = input.nextInt();
-        firstCellPhone.setSerialNumber(serialNumber);
+        cellPhone.setSerialNumber(serialNumber);
         input.nextLine();
 
-        System.out.print("What model is the firstCellPhone? ");
+        System.out.print("What model is the cellPhone1? ");
         String model = input.nextLine();
-        firstCellPhone.setModel(model);
+        cellPhone.setModel(model);
 
 
         System.out.print("Who is the carrier? ");
         String carrier = input.nextLine();
-        firstCellPhone.setCarrier(carrier);
+        cellPhone.setCarrier(carrier);
 
-        System.out.print("What is the firstCellPhone number? ");
-        String firstCellPhoneNumber = input.nextLine();
-        firstCellPhone.setPhoneNumber(firstCellPhoneNumber);
+        System.out.print("What is the cellPhone1 number? ");
+        String cellPhone1Number = input.nextLine();
+        cellPhone.setPhoneNumber(cellPhone1Number);
 
-        System.out.print("Who is the owner of the firstCellPhone? ");
+        System.out.print("Who is the owner of the cellPhone1? ");
         String owner = input.nextLine();
-        firstCellPhone.setOwner(owner);
-
-        // display firstCellPhone information
-        System.out.println("\nCell Phone Information:");
-        System.out.println("Serial Number: " + firstCellPhone.getSerialNumber());
-        System.out.println("Model: " + firstCellPhone.getModel());
-        System.out.println("Carrier: " + firstCellPhone.getCarrier());
-        System.out.println("Phone Number: " + firstCellPhone.getPhoneNumber());
-        System.out.println("Owner: " + firstCellPhone.getOwner());
-
+        cellPhone.setOwner(owner);
     }
 }
