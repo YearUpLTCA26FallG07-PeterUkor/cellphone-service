@@ -26,12 +26,12 @@ public class CellPhoneApplication {
     public static void configCellPhone(CellPhone cellPhone, Scanner input) {
 
         // prompt and accept input
-        System.out.print("What is the serial number? ");
+        System.out.print("\nWhat is the serial number? ");
         int serialNumber = input.nextInt();
         cellPhone.setSerialNumber(serialNumber);
         input.nextLine();
 
-        System.out.print("What model is the cellPhone1? ");
+        System.out.print("What model is the cellPhone? ");
         String model = input.nextLine();
         cellPhone.setModel(model);
 
@@ -40,11 +40,11 @@ public class CellPhoneApplication {
         String carrier = input.nextLine();
         cellPhone.setCarrier(carrier);
 
-        System.out.print("What is the cellPhone1 number? ");
+        System.out.print("What is the cellPhone number? ");
         String cellPhone1Number = input.nextLine();
         cellPhone.setPhoneNumber(cellPhone1Number);
 
-        System.out.print("Who is the owner of the cellPhone1? ");
+        System.out.print("Who is the owner of the cellPhone? ");
         String owner = input.nextLine();
         cellPhone.setOwner(owner);
     }
